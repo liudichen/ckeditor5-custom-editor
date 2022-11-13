@@ -1,7 +1,7 @@
 {
   "name": "@iimm/ckeditor5-editor-decoupled",
   "author": "iimm",
-  "description": "自用的ckeditor5的1个自定义配置组件",
+  "description": "自用的ckeditor5-editor-decoupled的自定义构建",
   "version": "1.0.0",
   "license": "MIT",
   "main": "./build/ckeditor.js",
