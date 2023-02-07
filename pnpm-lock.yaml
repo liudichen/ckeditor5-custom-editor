@@ -72,7 +72,7 @@ devDependencies:
   '@ckeditor/ckeditor5-upload': 36.0.1
   '@ckeditor/ckeditor5-watchdog': 36.0.1
   '@ckeditor/ckeditor5-word-count': 36.0.1
-  '@iimm/ckeditor5-plugins': 1.1.0
+  '@iimm/ckeditor5-plugins': 1.1.1_drfc5giomizsl7sra4ppwqzhyq
   css-loader: 5.2.7_webpack@5.75.0
   postcss: 8.4.21
   postcss-loader: 4.3.0_6jdsrmfenkuhhw3gx4zvjlznce
@@ -606,9 +606,14 @@ packages:
     resolution: {integrity: sha512-k2Ty1JcVojjJFwrg/ThKi2ujJ7XNLYaFGNB/bWT9wGR+oSMJHMa5w+CUq6p/pVrKeNNgA7pCqEcjSnHVoqJQFw==}
     dev: true
 
-  /@iimm/ckeditor5-plugins/1.1.0:
-    resolution: {integrity: sha512-vl2we69K3O7PVZTRNdG09kcOPPMDXuTEn6PC+a8HDpyUDznEbZl7ncTcGu2IlNTv5FBkrGEsf3eazrdeZN0Gsw==}
+  /@iimm/ckeditor5-plugins/1.1.1_drfc5giomizsl7sra4ppwqzhyq:
+    resolution: {integrity: sha512-VDfziYztgPH8zT3MbdmEidPAXgfYQuJg+OhUUAdXR7zhB4XsVpXs0z5QDgyyMg+vLZhKK3wpFl7bzGX89bl7zg==}
     engines: {node: '>=8.0.0', npm: '>=5.7.1'}
+    peerDependencies:
+      '@ckeditor/ckeditor5-core': ^36.0.1
+      '@ckeditor/ckeditor5-ui': ^36.0.1
+      '@ckeditor/ckeditor5-upload': ^36.0.1
+      '@ckeditor/ckeditor5-utils': ^36.0.1
     dependencies:
       '@ckeditor/ckeditor5-core': 36.0.1
       '@ckeditor/ckeditor5-ui': 36.0.1
