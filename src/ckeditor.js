@@ -21,7 +21,8 @@ import DocumentEditor from '@ckeditor/ckeditor5-editor-decoupled/src/decoupleded
 import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment.js';
 import Autoformat from '@ckeditor/ckeditor5-autoformat/src/autoformat.js';
 import AutoImage from '@ckeditor/ckeditor5-image/src/autoimage.js';
-import Base64UploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/base64uploadadapter.js';
+// import Base64UploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/base64uploadadapter.js';
+import SimpleUploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/simpleuploadadapter.js'
 import Bold from '@ckeditor/ckeditor5-basic-styles/src/bold.js';
 import Essentials from '@ckeditor/ckeditor5-essentials/src/essentials.js';
 import FindAndReplace from '@ckeditor/ckeditor5-find-and-replace/src/findandreplace.js';
@@ -76,7 +77,8 @@ Editor.builtinPlugins = [
   Alignment,
   Autoformat,
   AutoImage,
-  Base64UploadAdapter,
+  // Base64UploadAdapter,
+  SimpleUploadAdapter,
   // BlockQuote,
   Bold,
   // Code,
