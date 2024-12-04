@@ -1,5 +1,32 @@
+diff --git a/src/filters/image.js b/src/filters/image.js
+index 4babd657ff6b16d27d7438e56e299cbb8018129e..a74ab4618ec0fe1fd9a30d1e47a685154e8cb751 100644
+--- a/src/filters/image.js
++++ b/src/filters/image.js
+@@ -200,10 +200,19 @@ function extractImageDataFromRtf(rtfData) {
+     if (!rtfData) {
+         return [];
+     }
+-    const regexPictureHeader = /{\\pict[\s\S]+?\\bliptag-?\d+(\\blipupi-?\d+)?({\\\*\\blipuid\s?[\da-fA-F]+)?[\s}]*?/;
+-    const regexPicture = new RegExp('(?:(' + regexPictureHeader.source + '))([\\da-fA-F\\s]+)\\}', 'g');
+-    const images = rtfData.match(regexPicture);
++    let regexPictureHeader = /{\\pict[\s\S]+?\\bliptag-?\d+(\\blipupi-?\d+)?({\\\*\\blipuid\s?[\da-fA-F]+)?[\s}]*?/;
++    let regexPicture = new RegExp('(?:(' + regexPictureHeader.source + '))([\\da-fA-F\\s]+)\\}', 'g');
++    let images = rtfData.match(regexPicture);
+     const result = [];
++    if ( !images ) {
++        regexPictureHeader =
++          /{\\pict[\s\S]+?(\\pngblip-?\d+)?(\\wmetafile8-?\d+)?{\\\*\\blipuid\s?[\da-fA-F]+[\s}]*?/;
++        regexPicture = new RegExp(
++          '(?:(' + regexPictureHeader.source + '))([\\da-fA-F\\s]+)\\}',
++          'g'
++        );
++        images = rtfData.match( regexPicture );
++    }
+     if (images) {
+         for (const image of images) {
+             let imageType = false;
 diff --git a/src/filters/space.js b/src/filters/space.js
-index a2f63e409de1a8b01d749de25fa8e43885b263e9..d3b9696dbe9f0af9772dd76869b09fa7c6068831 100644
+index a2f63e409de1a8b01d749de25fa8e43885b263e9..0616c38da5bc0db27950f423480d8ddafde0209f 100644
 --- a/src/filters/space.js
 +++ b/src/filters/space.js
 @@ -37,8 +37,10 @@ export function normalizeSpacing(htmlString) {
@@ -8,10 +35,10 @@ index a2f63e409de1a8b01d749de25fa8e43885b263e9..d3b9696dbe9f0af9772dd76869b09fa7
          const htmlElement = el;
 -        const innerTextLength = htmlElement.innerText.length || 0;
 -        htmlElement.innerText = Array(innerTextLength + 1).join('\u00A0 ').substr(0, innerTextLength);
-+        if (/[^\b]/.test( el.innerText.trim() ) === false) {
-+          const innerTextLength = el.innerText.length || 0;
-+          htmlElement.innerText = Array(innerTextLength + 1).join('\u00A0 ').substr(0, innerTextLength); 
-+        }  
++        if ( /[^\b]/.test( htmlElement.innerText.trim() ) === false ) {
++          const innerTextLength = htmlElement.innerText.length || 0;
++          htmlElement.innerText = Array( innerTextLength + 1 ).join( '\u00A0 ' ).substr( 0, innerTextLength );
++        }
      });
  }
  /**

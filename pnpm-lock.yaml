@@ -6,7 +6,7 @@ settings:
 
 patchedDependencies:
   '@ckeditor/ckeditor5-paste-from-office':
-    hash: 5jkifprc7sfa376rhdal37mh2a
+    hash: xptqoqw3ysojcd6icpt23ttdam
     path: patches/@ckeditor__ckeditor5-paste-from-office.patch
 
 importers:
@@ -78,7 +78,7 @@ importers:
         version: 36.0.1
       '@ckeditor/ckeditor5-paste-from-office':
         specifier: 36.0.1
-        version: 36.0.1(patch_hash=5jkifprc7sfa376rhdal37mh2a)
+        version: 36.0.1(patch_hash=xptqoqw3ysojcd6icpt23ttdam)
       '@ckeditor/ckeditor5-remove-format':
         specifier: 36.0.1
         version: 36.0.1
@@ -2068,7 +2068,7 @@ snapshots:
       '@ckeditor/ckeditor5-ui': 36.0.1
       '@ckeditor/ckeditor5-utils': 36.0.1
 
-  '@ckeditor/ckeditor5-paste-from-office@36.0.1(patch_hash=5jkifprc7sfa376rhdal37mh2a)':
+  '@ckeditor/ckeditor5-paste-from-office@36.0.1(patch_hash=xptqoqw3ysojcd6icpt23ttdam)':
     dependencies:
       ckeditor5: 36.0.1
 
